@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import {RiMenu2Fill} from 'react-icons/ri';
 
 const HomePage: NextPage = () => {
   let [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -21,7 +22,9 @@ const HomePage: NextPage = () => {
           <Link href="/snippets">Snippets</Link>
         </div>
         <div className="navlink-mobile-wrapper">
-          <button onClick={onMobileHamburgerClick}>|||</button>
+          <span onClick={onMobileHamburgerClick} className="nav-toggle">
+            <RiMenu2Fill></RiMenu2Fill>
+          </span>
           <div
             className="menu-items"
             style={{ display: isMobileMenuOpen ? "flex" : "none" }}
